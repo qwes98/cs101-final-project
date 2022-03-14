@@ -1,10 +1,10 @@
 from scrap import *
+from flask import Flask
 
-# 스크래핑하기
-data = run_scrapping()
+app = Flask(__name__)
 
-# 스크래핑한 데이터 출력해보기
-#print(data)  
+@app.route('/')
+def hello():
+    return 'Hello, World!'
 
-# 스크래핑한 데이터 Export 해보기
-#export_csv(data)  
+app.run(debug=True)
